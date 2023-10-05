@@ -61,3 +61,12 @@ prevBtn.addEventListener("click", prevReview);
 nextBtn.addEventListener("click", nextReview);
 
 displayReview(reviews[currentReviewIndex]);
+
+// Bonus : Surprise me function
+function surpriseMe() {
+  const randomNumber = Math.floor(Math.random() * reviews.length);
+  displayReview(reviews[randomNumber]);
+}
+
+const surpriseMeBtn = document.getElementById("surpriseBtn");
+surpriseMeBtn.addEventListener("click", surpriseMe);
