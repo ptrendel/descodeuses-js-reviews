@@ -39,4 +39,25 @@ function displayReview(currentReview) {
   descriptionElt.innerHTML = currentReview.description;
 }
 
+function prevReview() {
+  if (currentReviewIndex > 0) {
+    currentReviewIndex -= 1;
+  } else {
+    currentReviewIndex = reviews.length - 1;
+  }
+  displayReview(reviews[currentReviewIndex]);
+}
+
+function nextReview() {
+  if (currentReviewIndex < reviews.length - 1) {
+    currentReviewIndex += 1;
+  } else {
+    currentReviewIndex = 0;
+  }
+  displayReview(reviews[currentReviewIndex]);
+}
+
+prevBtn.addEventListener("click", prevReview);
+nextBtn.addEventListener("click", nextReview);
+
 displayReview(reviews[currentReviewIndex]);
